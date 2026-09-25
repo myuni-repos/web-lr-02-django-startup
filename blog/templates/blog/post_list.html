@@ -6,10 +6,33 @@
     <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
     <title>Мой Блог</title>
 </head>
-<body class="theme-light font-normal">
+<body class="{{ current_theme }} {{ current_font }}">
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+        <img src="{% static 'blog/images/main_logo.jpeg' %}" alt="Логотип блога" width="70" style="border-radius: 90px;">
+
+        <form method="POST" style="background: var(--card-bg); padding: 10px; border-radius: 5px; border: 1px solid var(--border-color);">
+            {% csrf_token %}
+            
+            <label for="theme">Тема:</label>
+            <select name="theme" id="theme">
+                <option value="theme-light" {% if current_theme == 'theme-light' %}selected{% endif %}>Светлая</option>
+                <option value="theme-dark" {% if current_theme == 'theme-dark' %}selected{% endif %}>Темная</option>
+            </select>
+
+            <label for="font_size">Размер шрифта:</label>
+            <select name="font_size" id="font_size">
+                <option value="font-small" {% if current_font == 'font-small' %}selected{% endif %}>Мелкий</option>
+                <option value="font-normal" {% if current_font == 'font-normal' %}selected{% endif %}>Обычный</option>
+                <option value="font-large" {% if current_font == 'font-large' %}selected{% endif %}>Крупный</option>
+            </select>
+
+            <button type="submit">Сохранить</button>
+        </form>
+    </div>
+
     <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
         <h1>Список статей</h1>
-        <img src="{% static 'blog/images/logo.jpg' %}" alt="Логотип блога" width="70" style="border-radius: 90px;">
+        <!-- <img src="{% static 'blog/images/logo.jpg' %}" alt="Логотип блога" width="70" style="border-radius: 90px;"> -->
     </div>
     
     <div class="posts">

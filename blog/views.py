@@ -25,9 +25,23 @@ POSTS = [
 ]
 
 def post_list(request):
-    
+    current_theme = request.COOKIES.get('theme', 'theme-light')
+    current_font = request.COOKIES.get('font_size', 'font-normal')
+
+    if request.method == 'POST':
+        current_theme = request.POST.get('theme', current_theme)
+        current_font = request.POST.get('font_size', current_font)
+
     context = {
-        'posts': POSTS
+        'posts': POSTS,
+        'current_theme': current_theme,
+        'current_font': current_font,
     }
-    
-    return render(request, 'blog/post_list.html', context)
+
+    response = render(request, 'blog/post_list.html', context)
+
+    if request.method == 'POST':
+        response.set_cookie('theme', current_theme, max_age=31536000)
+        response.set_cookie('font_size', current_font, max_age=31536000)
+
+    return response
