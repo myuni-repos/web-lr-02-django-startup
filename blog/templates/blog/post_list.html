@@ -1,11 +1,16 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
     <title>Мой Блог</title>
 </head>
-<body>
-    <h1>Список статей</h1>
+<body class="theme-light font-normal">
+    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
+        <h1>Список статей</h1>
+        <img src="{% static 'blog/images/logo.jpg' %}" alt="Логотип блога" width="70" style="border-radius: 90px;">
+    </div>
     
     <div class="posts">
         {% for post in posts %}
