@@ -1,5 +1,7 @@
-# Создаем проект (точка в конце важна, чтобы не плодить лишние вложенные папки)
+# Создаем проект 
 `django-admin startproject config .`
 
-# Создаем приложение (назовем его, например, blog)
+# Создаем приложение
 `python manage.py startapp blog`
+
+## view.py это controller в MVC
