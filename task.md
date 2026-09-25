@@ -30,3 +30,5 @@
 12. Финальный коммит и публикация
 - Залейте проект на GitHub.
 - Предоставьте ссылку на репозиторий.
+
+Чтобы вспомнить: https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221-Z6Oj2mWM9jIq_-r6q9ZSSjcOlLj7BB3%22%5D,%22action%22:%22open%22,%22userId%22:%22112020795947265901073%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing, https://drive.google.com/file/d/1GNdpdDfq9oKWRg9hqkD0FHcjMljcRp-D/view?usp=sharing
